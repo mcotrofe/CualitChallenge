@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+
+    public virtual Health MainHealth()
     {
-        
+        return this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void ReceiveDamage(int damage)
     {
-        
+
     }
 }
