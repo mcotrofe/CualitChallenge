@@ -10,11 +10,11 @@ public class MeleWeapon : MonoBehaviour
     [SerializeField] Transform[] raycastPoints;
     [SerializeField] UnityEvent OnWeaponSwingStart;
     [SerializeField] UnityEvent OnWeaponSwingEnd;
+    [SerializeField] bool DrawDebug = false;
 
     private bool isDetectionActive = false;
     private Vector3[] prevPositions;
     private List<Collider> processedColliders = new List<Collider>();
-    private List<Health> charactersHit = new List<Health>();
 
 
     public void StartSwing()
@@ -23,7 +23,6 @@ public class MeleWeapon : MonoBehaviour
         prevPositions = null;
         isDetectionActive = true;
         processedColliders.Clear();
-        charactersHit.Clear();
     }
 
     public void EndSwing()
@@ -33,7 +32,7 @@ public class MeleWeapon : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         if (isDetectionActive)
         {
@@ -61,27 +60,22 @@ public class MeleWeapon : MonoBehaviour
 
     private void UpdatePointDetection(int pointIndex)
     {
-        Transform point = raycastPoints[pointIndex];
-        Vector3 currentPos = point.position;
+        Vector3 currentPos = raycastPoints[pointIndex].position;
         Vector3 lastPosition = prevPositions[pointIndex];
         Vector3 direction = currentPos - lastPosition;
-        float distance = direction.magnitude;
-        float speed = distance / Time.deltaTime;
-        Vector3 velocity = direction.normalized * speed;
 
-        RaycastHit hit;
-        if (Physics.Raycast(lastPosition, direction, out hit, distance, hitLayers, QueryTriggerInteraction.Collide) && !processedColliders.Contains(hit.collider))
+        RaycastHit hitInfo;
+        bool hit = Physics.Raycast(lastPosition, direction, out hitInfo, direction.magnitude, hitLayers, QueryTriggerInteraction.Collide);
+        if (hit && !processedColliders.Contains(hitInfo.collider)) 
         {
-            processedColliders.Add(hit.collider);
-            var health = hit.collider.GetComponent<Health>();
-            if (health)
-            {
-                if (charactersHit.Contains(health.MainHealth())) return;
-                charactersHit.Add(health.MainHealth());
-                health.ReceiveDamage(damage);
-            }
+            processedColliders.Add(hitInfo.collider);
+            var health = hitInfo.collider.GetComponent<Health>();
+            if (health) health.ReceiveDamage(damage, direction);
         }
         prevPositions[pointIndex] = currentPos;
+
+        if (DrawDebug) Debug.DrawRay(lastPosition, direction, hit? Color.red : Color.yellow, hit ? 1.5f : .5f);
+
     }
 
 

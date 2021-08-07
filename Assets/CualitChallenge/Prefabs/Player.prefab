@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2989283909301465648}
   - component: {fileID: 2989283909301465655}
   - component: {fileID: 2989283909301465654}
+  - component: {fileID: 2422290847298294736}
   m_Layer: 7
   m_Name: RightForeArm
   m_TagString: Untagged
@@ -142,6 +143,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2422290847298294736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988158356968860125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  mainHealth: {fileID: 3392443564754008443}
 --- !u!1 &2988183829834563639
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +447,7 @@ GameObject:
   - component: {fileID: 2989283909493562675}
   - component: {fileID: 2989283909493562636}
   - component: {fileID: 2989283909493562637}
+  - component: {fileID: 7183529315437252310}
   m_Layer: 7
   m_Name: LeftArm
   m_TagString: Untagged
@@ -531,6 +547,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7183529315437252310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988249027690048937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  mainHealth: {fileID: 3392443564754008443}
 --- !u!1 &2988256952806055935
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +715,7 @@ GameObject:
   - component: {fileID: 2989283910495109628}
   - component: {fileID: 2989283910495109629}
   - component: {fileID: 2989283910495109630}
+  - component: {fileID: 9077004199773634347}
   m_Layer: 7
   m_Name: LeftUpLeg
   m_TagString: Untagged
@@ -784,6 +815,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &9077004199773634347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988269276839324081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  mainHealth: {fileID: 3392443564754008443}
 --- !u!1 &2988272712144450389
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,6 +840,7 @@ GameObject:
   - component: {fileID: 2986556022075527201}
   - component: {fileID: 2989283909266388987}
   - component: {fileID: 2989283909266388980}
+  - component: {fileID: 2215936858967220619}
   m_Layer: 7
   m_Name: Hips
   m_TagString: Untagged
@@ -849,6 +895,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.37139782, y: 0.38670123, z: 0.2614149}
   m_Center: {x: 0.000000074505806, y: 0.14597702, z: -0.01703395}
+--- !u!114 &2215936858967220619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988272712144450389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  mainHealth: {fileID: 3392443564754008443}
 --- !u!1 &2988281268499529529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,6 +1096,7 @@ GameObject:
   - component: {fileID: 2989283910364277305}
   - component: {fileID: 2989283910364277306}
   - component: {fileID: 2989283908710155514}
+  - component: {fileID: 3392443564754008443}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1109,8 +1170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canAim: 1
-  animationParamSmoothing: 10
-  inputSmoothing: 10
+  animationParamSmoothing: 15
+  inputSmoothing: 15
   rotationSmoothing: 10
 --- !u!114 &2989283908710155514
 MonoBehaviour:
@@ -1125,6 +1186,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3360338244751889155}
+--- !u!114 &3392443564754008443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988331205330626983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d26c4d095f77c4a9e16db990ea8a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
 --- !u!1 &2988352698080286741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1241,7 @@ GameObject:
   - component: {fileID: 2989283910295269289}
   - component: {fileID: 2989283910295269290}
   - component: {fileID: 2989283910295269291}
+  - component: {fileID: 5055729728930407855}
   m_Layer: 7
   m_Name: RightUpLeg
   m_TagString: Untagged
@@ -1266,6 +1341,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5055729728930407855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988360961811661945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  mainHealth: {fileID: 3392443564754008443}
 --- !u!1 &2988365149574204955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1559,7 @@ GameObject:
   - component: {fileID: 2989283909517554907}
   - component: {fileID: 2989283909517554906}
   - component: {fileID: 2989283909517554905}
+  - component: {fileID: 7378021106778838463}
   m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
@@ -1519,8 +1609,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.12715274
-  m_Center: {x: 0, y: 0.055160787, z: 0.022498295}
+  m_Radius: 0.15525062
+  m_Center: {x: 0.0000000020307596, y: 0.061673727, z: 0.022498295}
 --- !u!144 &2989283909517554905
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1558,7 +1648,7 @@ CharacterJoint:
     limit: 0
     bounciness: 0
     contactDistance: 0
-  m_EnableProjection: 0
+  m_EnableProjection: 1
   m_ProjectionDistance: 0.1
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
@@ -1567,6 +1657,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7378021106778838463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988389575479591911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  mainHealth: {fileID: 3392443564754008443}
 --- !u!1 &2988417002171695877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,6 +2010,7 @@ GameObject:
   - component: {fileID: 2989283909854203483}
   - component: {fileID: 2989283909854203482}
   - component: {fileID: 2989283909854203481}
+  - component: {fileID: 3340827306252285110}
   m_Layer: 7
   m_Name: LeftForeArm
   m_TagString: Untagged
@@ -2005,6 +2110,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3340827306252285110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988531677937818567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  mainHealth: {fileID: 3392443564754008443}
 --- !u!1 &2988539198458261331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,6 +2966,7 @@ GameObject:
   - component: {fileID: 2989283909975612249}
   - component: {fileID: 2989283909975612250}
   - component: {fileID: 2989283909975612251}
+  - component: {fileID: 2112597869753860233}
   m_Layer: 7
   m_Name: Spine1
   m_TagString: Untagged
@@ -2947,6 +3067,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2112597869753860233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988733946741649857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  mainHealth: {fileID: 3392443564754008443}
 --- !u!1 &2988736385888436917
 GameObject:
   m_ObjectHideFlags: 0
@@ -3139,6 +3273,7 @@ GameObject:
   - component: {fileID: 2989283910271415056}
   - component: {fileID: 2989283910271415057}
   - component: {fileID: 2989283910271415058}
+  - component: {fileID: 7565387941229302674}
   m_Layer: 7
   m_Name: RightArm
   m_TagString: Untagged
@@ -3238,6 +3373,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7565387941229302674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988815155774253531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  mainHealth: {fileID: 3392443564754008443}
 --- !u!1 &2988825022443276375
 GameObject:
   m_ObjectHideFlags: 0
@@ -3455,6 +3604,7 @@ GameObject:
   - component: {fileID: 2989283909950077759}
   - component: {fileID: 2989283909950077758}
   - component: {fileID: 2989283909950077757}
+  - component: {fileID: 5931309733740130047}
   m_Layer: 7
   m_Name: LeftLeg
   m_TagString: Untagged
@@ -3554,6 +3704,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5931309733740130047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988881018202365301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  mainHealth: {fileID: 3392443564754008443}
 --- !u!1 &2988894772448594923
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,6 +4253,7 @@ GameObject:
   - component: {fileID: 2989283909482823467}
   - component: {fileID: 2989283909482823466}
   - component: {fileID: 2989283909482823465}
+  - component: {fileID: 4481882924488694697}
   m_Layer: 7
   m_Name: RightLeg
   m_TagString: Untagged
@@ -4188,6 +4353,20 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &4481882924488694697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2990348140919410253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  mainHealth: {fileID: 3392443564754008443}
 --- !u!1 &2990358853929264993
 GameObject:
   m_ObjectHideFlags: 0
