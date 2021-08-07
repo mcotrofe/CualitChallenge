@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,9 +26,22 @@ public class AIBrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.destination = Player.position;
-        
-        animator.SetBool(RunParameter, agent.velocity.magnitude / agent.speed > .15f);
-        animator.SetFloat(ForwardParameter, agent.velocity.magnitude / agent.speed);
+        if(DistanceToPlayer() < 1.25f)
+        {
+            agent.isStopped = true;
+            animator.SetBool(RunParameter, false);
+            animator.SetFloat(ForwardParameter, agent.velocity.magnitude / agent.speed);
+        }
+        else
+        {
+            agent.isStopped = false;
+            agent.destination = Player.position;
+
+            animator.SetBool(RunParameter, agent.velocity.magnitude / agent.speed > .15f);
+            animator.SetFloat(ForwardParameter, agent.velocity.magnitude / agent.speed);
+        }
+
     }
+
+    private float DistanceToPlayer() => Vector3.Distance(transform.position, Player.position);
 }

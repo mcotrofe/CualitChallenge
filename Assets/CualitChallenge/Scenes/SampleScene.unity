@@ -515,7 +515,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148542955}
-  m_LocalRotation: {x: 0.01344252, y: 0.09294556, z: -0.0012549702, w: 0.99557966}
+  m_LocalRotation: {x: 0.01344252, y: 0.0929456, z: -0.0012549704, w: 0.99557966}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -32403,7 +32403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.080072165, y: 0.09265299, z: -0.0074753966, w: 0.99244547}
-  m_LocalPosition: {x: -0.385516, y: 3.6, z: -17.833595}
+  m_LocalPosition: {x: -0.385516, y: 2.5, z: -17.833595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -37064,7 +37064,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513657645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.385516, y: 3.6, z: -17.833595}
+  m_LocalPosition: {x: -0.385516, y: 2.5, z: -17.833595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1307787460}
@@ -39955,6 +39955,10 @@ MonoBehaviour:
 
     Move the mouse to look arround
 
+    Left
+    Click to attack
+
+    Hold Right mouse button to aim
 
 
 '
@@ -51905,7 +51909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2985011443120178245, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2985011443120178245, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
       propertyPath: m_LocalPosition.z

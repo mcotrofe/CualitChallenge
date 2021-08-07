@@ -20,7 +20,6 @@ namespace Player.Controller.RootMotion
 
         static readonly Vector3 HorizontalPlane = new Vector3(1, 0, 1);
 
-
         [SerializeField] float animationParamSmoothing = 10;
         [SerializeField] float inputSmoothing = 10;
 
@@ -77,7 +76,7 @@ namespace Player.Controller.RootMotion
             SetForwardToCameraForward();
             Vector3 inputVector = relativeToPlayerMoveVector;
             SetMoveAnimationParameters(
-                forward: inputVector.z, 
+                forward: IsRunning()? Mathf.Clamp01(inputVector.z):inputVector.z, 
                 rotate: 0, 
                 strafe: inputVector.x,
                 run: IsRunning(),

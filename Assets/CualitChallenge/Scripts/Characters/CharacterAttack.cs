@@ -7,6 +7,8 @@ public class CharacterAttack : MonoBehaviour
 {
     static readonly string AttackParameter = "Attack";
 
+    
+
 
     protected virtual void Awake()
     {
