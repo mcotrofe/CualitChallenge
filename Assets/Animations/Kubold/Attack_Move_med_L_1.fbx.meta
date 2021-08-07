@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: a16acec0e6a98fd40b2bb3dde85ac3f0
+guid: ccfeb50a0ac98534997c03c66858a6ef
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: -7399247077569357092
-    second: Attack_Place_fast_Lup_1
+      74: 1749886608512965816
+    second: Attack_Move_med_L_1
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack_Place_fast_Lup_1
-      takeName: Attack_Place_fast_Lup_1
+      name: Attack_Move_med_L_1
+      takeName: Attack_Move_med_L_1
       internalID: 0
       firstFrame: 0
-      lastFrame: 111
+      lastFrame: 102
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -50,7 +50,7 @@ ModelImporter:
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
