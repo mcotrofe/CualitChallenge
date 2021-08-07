@@ -16,6 +16,7 @@ namespace Player.Controller.RootMotion
         static readonly string HorizontalAxisInput = "Horizontal";
         static readonly string VerticalAxisInput = "Vertical";
         static readonly string RunInput = "Run";
+        static readonly string AimInput = "Aim";
 
         static readonly Vector3 HorizontalPlane = new Vector3(1, 0, 1);
 
@@ -29,6 +30,7 @@ namespace Player.Controller.RootMotion
 
 
         private bool run { get; set; }
+        private bool aim { get; set; }
         private Vector2 rawMoveInput { get; set; }
         private Vector2 smoothedMoveInput { get; set; }
         private Vector3 relativeToCameraMoveVector => cameraForward * smoothedMoveInput.y + cameraRight * smoothedMoveInput.x;
@@ -58,6 +60,7 @@ namespace Player.Controller.RootMotion
             rawMoveInput = new Vector2(Input.GetAxis(HorizontalAxisInput), Input.GetAxis(VerticalAxisInput));
             smoothedMoveInput = Vector2.Lerp(smoothedMoveInput, rawMoveInput, Time.deltaTime * inputSmoothing);
             run = Input.GetButton(RunInput);
+            aim = Input.GetButton(AimInput);
         }
 
         void UpdateMovement()
@@ -66,18 +69,22 @@ namespace Player.Controller.RootMotion
             else UpdateFreeMovement();
         }
 
-        public bool IsFixedMovement() => false;
+        public bool IsFixedMovement() => aim;
+
 
         void UpdateFixedMovement()
         {
+            SetForwardToCameraForward();
             Vector3 inputVector = relativeToPlayerMoveVector;
             SetMoveAnimationParameters(
                 forward: inputVector.z, 
                 rotate: 0, 
                 strafe: inputVector.x,
-                IsRunning(),
-                IsFixedMovement());
+                run: IsRunning(),
+                aim : !IsRunning());
         }
+
+        void SetForwardToCameraForward() => transform.forward = cameraForward;
 
         void UpdateFreeMovement()
         {
