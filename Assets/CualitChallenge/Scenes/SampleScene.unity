@@ -53311,6 +53311,10 @@ PrefabInstance:
       value: -0.00000042282045
       objectReference: {fileID: 0}
     - target: {fileID: 2989283909517554905, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.36749208
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989283909517554905, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: -0.012373487
       objectReference: {fileID: 0}
@@ -53339,6 +53343,10 @@ PrefabInstance:
       value: -0.00000027261558
       objectReference: {fileID: 0}
     - target: {fileID: 2989283909975612251, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.33932775
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989283909975612251, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 0.0013974331
       objectReference: {fileID: 0}
@@ -53359,16 +53367,28 @@ PrefabInstance:
       value: 0.13222177
       objectReference: {fileID: 0}
     - target: {fileID: 2989283910295269291, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.047373593
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989283910295269291, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: -0.0026721118
       objectReference: {fileID: 0}
     - target: {fileID: 2989283910364277306, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
-      propertyPath: canAim
-      value: 1
+      propertyPath: inputSmoothing
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989283910364277306, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
+      propertyPath: animationParamSmoothing
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2989283910495109630, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.13222207
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989283910495109630, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.047373593
       objectReference: {fileID: 0}
     - target: {fileID: 2989283910495109630, guid: 4e7d32cfcabdf6246911f46f1447c5c3, type: 3}
       propertyPath: m_ConnectedAnchor.z

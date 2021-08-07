@@ -21,4 +21,14 @@ public class CharacterCombat : MonoBehaviour
         animator.SetTrigger(AttackTrigger);
     }
 
+    public void OnWeaponSwingStart()
+    {
+        weapon.StartSwing();
+    }
+
+    public void OnWeaponSwingEnd()
+    {
+        weapon.EndSwing();
+    }
+
 }
