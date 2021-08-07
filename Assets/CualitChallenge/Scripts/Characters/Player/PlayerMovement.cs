@@ -27,9 +27,9 @@ namespace Player.Controller.RootMotion
         private Animator animator;
         private Transform cameraTransform;
 
-
         private bool run { get; set; }
         private bool aim { get; set; }
+        private bool inCombat { get; set; }
         private Vector2 rawMoveInput { get; set; }
         private Vector2 smoothedMoveInput { get; set; }
         private Vector3 relativeToCameraMoveVector => cameraForward * smoothedMoveInput.y + cameraRight * smoothedMoveInput.x;
@@ -38,6 +38,7 @@ namespace Player.Controller.RootMotion
         private Vector3 cameraRight => Vector3.Scale(cameraTransform.right, HorizontalPlane).normalized;
 
 
+        public void SetInCombat(bool inCombat) => this.inCombat = inCombat;
 
         void Awake()
         {
@@ -54,7 +55,7 @@ namespace Player.Controller.RootMotion
         }
 
 
-        public void UpdateInputs()
+        void UpdateInputs()
         {
             rawMoveInput = new Vector2(Input.GetAxis(HorizontalAxisInput), Input.GetAxis(VerticalAxisInput));
             smoothedMoveInput = Vector2.Lerp(smoothedMoveInput, rawMoveInput, Time.deltaTime * inputSmoothing);
@@ -68,8 +69,7 @@ namespace Player.Controller.RootMotion
             else UpdateFreeMovement();
         }
 
-        public bool IsFixedMovement() => aim;
-
+        bool IsFixedMovement() => aim || inCombat && !run;
 
         void UpdateFixedMovement()
         {
@@ -91,7 +91,7 @@ namespace Player.Controller.RootMotion
             else UpdateFreeWalk();
         }
 
-        public bool IsRunning() => run;
+        bool IsRunning() => run;
 
         void UpdateFreeRun()
         {
