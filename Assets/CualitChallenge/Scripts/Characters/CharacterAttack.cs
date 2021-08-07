@@ -5,19 +5,18 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class CharacterAttack : MonoBehaviour
 {
-    static readonly string AttackParameter = "Attack";
+    static readonly string AttackTrigger = "Attack";
 
-    
-
+    private Animator animator;
 
     protected virtual void Awake()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
-
-    void Update()
+    public void Attack()
     {
-        
+        animator.SetTrigger(AttackTrigger);
     }
+
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MeleWeapon : MonoBehaviour
 {
+    [SerializeField] Transform[] raycastPoints;
+
     // Start is called before the first frame update
     void Start()
     {

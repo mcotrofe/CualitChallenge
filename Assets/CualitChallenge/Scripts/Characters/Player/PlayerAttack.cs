@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayerAttack : CharacterAttack
 {
-    static readonly string AttackTrigger = "Attack";
     static readonly string AttackInput = "Attack";
 
     void Update()
     {
-        
+        if (Input.GetButtonDown(AttackInput)) Attack();
     }
 
 }
