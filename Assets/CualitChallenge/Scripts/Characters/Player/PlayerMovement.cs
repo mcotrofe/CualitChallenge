@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
-namespace Player.Controller.RootMotion
+namespace CualitChallenge.Player
 {
     [RequireComponent(typeof(CharacterController), typeof(Animator))]
     public class PlayerMovement : MonoBehaviour
@@ -20,8 +20,11 @@ namespace Player.Controller.RootMotion
 
         static readonly Vector3 HorizontalPlane = new Vector3(1, 0, 1);
 
+
+        [SerializeField] bool canAim = true;
         [SerializeField] float animationParamSmoothing = 10;
         [SerializeField] float inputSmoothing = 10;
+        [SerializeField] float rotationSmoothing = 10;
 
         private CharacterController controller;
         private Animator animator;
@@ -60,7 +63,7 @@ namespace Player.Controller.RootMotion
             rawMoveInput = new Vector2(Input.GetAxis(HorizontalAxisInput), Input.GetAxis(VerticalAxisInput));
             smoothedMoveInput = Vector2.Lerp(smoothedMoveInput, rawMoveInput, Time.deltaTime * inputSmoothing);
             run = Input.GetButton(RunInput);
-            aim = Input.GetButton(AimInput);
+            aim = canAim && Input.GetButton(AimInput);
         }
 
         void UpdateMovement()
@@ -83,7 +86,7 @@ namespace Player.Controller.RootMotion
                 aim : !IsRunning());
         }
 
-        void SetForwardToCameraForward() => transform.forward = cameraForward;
+        void SetForwardToCameraForward() => transform.forward = Vector3.Lerp(transform.forward, cameraForward, Time.deltaTime * rotationSmoothing);
 
         void UpdateFreeMovement()
         {

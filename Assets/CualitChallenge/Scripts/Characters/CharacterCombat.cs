@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class CharacterAttack : MonoBehaviour
+public class CharacterCombat : MonoBehaviour
 {
     static readonly string AttackTrigger = "Attack";
 
-    private Animator animator;
+    [SerializeField] MeleWeapon weapon;
+
+    protected Animator animator;
 
     protected virtual void Awake()
     {
