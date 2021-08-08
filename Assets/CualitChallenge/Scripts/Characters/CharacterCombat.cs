@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class CharacterCombat : MonoBehaviour
 {
     static readonly string AttackTrigger = "Attack";
 
-    [SerializeField] MeleWeapon weapon;
+    [SerializeField] MeleeWeapon weapon;
 
     protected Animator animator;
 
@@ -16,19 +17,14 @@ public class CharacterCombat : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void Attack()
-    {
-        animator.SetTrigger(AttackTrigger);
-    }
+    public void Attack() => animator.SetTrigger(AttackTrigger);
 
-    public void OnWeaponSwingStart()
-    {
-        weapon.StartSwing();
-    }
+    public void OnWeaponSwingStart() => weapon?.StartSwing();
 
-    public void OnWeaponSwingEnd()
-    {
-        weapon.EndSwing();
-    }
+    public void OnWeaponSwingEnd() => weapon?.EndSwing();
 
+    public void DropWeapon()
+    {
+        if(weapon) weapon.transform.parent = null;
+    }
 }

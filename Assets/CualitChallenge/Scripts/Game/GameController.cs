@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour
 
     public void SetCursorLocked(bool locked)
     {
-        Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.Confined;
+        Cursor.lockState = locked ? CursorLockMode.Locked : CursorLockMode.None;
         Cursor.visible = !locked;
         this.isCursorLocked = locked;
     }

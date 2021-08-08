@@ -9,6 +9,7 @@ using UnityEngine.AI;
 public class AIBrain : MonoBehaviour
 {
     static readonly string ForwardParameter = "Forward";
+
     static readonly string RotateParameter = "Rotate";
     static readonly string RunParameter = "Run";
 
@@ -21,6 +22,7 @@ public class AIBrain : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        animator.SetBool("Aim", true);
     }
 
     // Update is called once per frame
@@ -44,4 +46,5 @@ public class AIBrain : MonoBehaviour
     }
 
     private float DistanceToPlayer() => Vector3.Distance(transform.position, Player.position);
+
 }

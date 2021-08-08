@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MeleWeapon : MonoBehaviour
+public class MeleeWeapon : MonoBehaviour
 {
     [SerializeField] int damage = 1;
     [SerializeField] LayerMask hitLayers;
@@ -15,7 +15,13 @@ public class MeleWeapon : MonoBehaviour
     private bool isDetectionActive = false;
     private Vector3[] prevPositions;
     private List<Collider> processedColliders = new List<Collider>();
+    private CharacterMainHealth wielderHealth;
 
+
+    private void Awake()
+    {
+        wielderHealth = GetComponentInParent<CharacterMainHealth>();
+    }
 
     public void StartSwing()
     {
@@ -70,7 +76,7 @@ public class MeleWeapon : MonoBehaviour
         {
             processedColliders.Add(hitInfo.collider);
             var health = hitInfo.collider.GetComponent<Health>();
-            if (health) health.ReceiveDamage(damage, direction);
+            if (health && health != wielderHealth) health.ReceiveDamage(damage, direction);
         }
         prevPositions[pointIndex] = currentPos;
 
