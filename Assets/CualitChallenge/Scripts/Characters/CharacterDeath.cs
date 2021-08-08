@@ -12,21 +12,19 @@ namespace CualitChallenge.Characters
         [SerializeField] Rigidbody chestRigidbody;
         [SerializeField] Rigidbody headRigidbody;
         [SerializeField] GameObject[] deadEffects;
-        [SerializeField] UnityEvent onDead;
-
+        [SerializeField] UnityEvent onDeath;
+        
+        public UnityEvent OnDeath => onDeath;
 
         private bool isDead = false;
         private CharacterMainHealth health;
 
 
-
         void Awake()
         {
             health = GetComponent<CharacterMainHealth>();
-            foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
-            {
-                rb.isKinematic = true;
-            }
+            ResetCharacter();
+
         }
 
         // Update is called once per frame
@@ -41,7 +39,7 @@ namespace CualitChallenge.Characters
         private void Die()
         {
             isDead = true;
-            onDead.Invoke();
+            onDeath.Invoke();
             StartCoroutine(DieCoroutine());
 
         }
@@ -57,8 +55,29 @@ namespace CualitChallenge.Characters
             yield return null;
             headRigidbody.velocity = (health.GetLastHitDirection().normalized + Vector3.up * .5f) * Random.Range(2, 15);
             chestRigidbody.velocity = health.GetLastHitDirection().normalized * Random.Range(2, 15);
-            foreach (GameObject fx in deadEffects) fx.SetActive(true);
+            PlayFx();
             yield return null;
+        }
+
+        public void ResetCharacter()
+        {
+            foreach (GameObject fx in deadEffects) fx.SetActive(false);
+            foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
+            {
+                rb.isKinematic = true;
+            }
+            GetComponent<Animator>().enabled = true;
+            GetComponent<CharacterCombat>().RespawnWeapon();
+        }
+
+        private void PlayFx()
+        {
+            foreach (GameObject fx in deadEffects)
+            {
+                fx.SetActive(true);
+                ParticleSystem ps = fx.GetComponent<ParticleSystem>();
+                ps?.Play();
+            }
         }
     }
 }

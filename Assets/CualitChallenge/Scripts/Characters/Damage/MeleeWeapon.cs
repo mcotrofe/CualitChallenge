@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,7 +9,10 @@ namespace CualitChallenge.Characters.Damage
     {
         [SerializeField] int damage = 1;
         [SerializeField] LayerMask hitLayers;
+        [SerializeField] bool filterByTag = false;
+        [SerializeField] string hitTag;
         [SerializeField] Transform[] raycastPoints;
+
         [SerializeField] UnityEvent OnWeaponSwingStart;
         [SerializeField] UnityEvent OnWeaponSwingEnd;
         [SerializeField] bool DrawDebug = false;
@@ -73,7 +77,7 @@ namespace CualitChallenge.Characters.Damage
 
             RaycastHit hitInfo;
             bool hit = Physics.Raycast(lastPosition, direction, out hitInfo, direction.magnitude, hitLayers, QueryTriggerInteraction.Collide);
-            if (hit && !processedColliders.Contains(hitInfo.collider))
+            if (hit && !processedColliders.Contains(hitInfo.collider) && IsCorrectTag(hitInfo.collider))
             {
                 processedColliders.Add(hitInfo.collider);
                 var health = hitInfo.collider.GetComponent<Health>();
@@ -85,6 +89,6 @@ namespace CualitChallenge.Characters.Damage
 
         }
 
-
+        private bool IsCorrectTag(Collider collider) => !filterByTag || collider.CompareTag(hitTag);
     }
 }
