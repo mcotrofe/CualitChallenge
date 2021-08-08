@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
   mainHealth: {fileID: 6700623783686972923}
 --- !u!1 &3547716658294152850
 GameObject:
@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
   mainHealth: {fileID: 6700623783686972923}
 --- !u!1 &3547814027798659534
 GameObject:
@@ -1683,7 +1683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
   mainHealth: {fileID: 6700623783686972923}
 --- !u!1 &3548030332558210046
 GameObject:
@@ -1901,7 +1901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
   mainHealth: {fileID: 6700623783686972923}
 --- !u!1 &3548071987058695624
 GameObject:
@@ -1981,7 +1981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
   mainHealth: {fileID: 6700623783686972923}
 --- !u!1 &3548086871410475828
 GameObject:
@@ -2107,7 +2107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
   mainHealth: {fileID: 6700623783686972923}
 --- !u!1 &3548090226689814882
 GameObject:
@@ -2459,7 +2459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d26c4d095f77c4a9e16db990ea8a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
 --- !u!114 &4479001516623281271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2474,9 +2474,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chestRigidbody: {fileID: 3546905207006442948}
   headRigidbody: {fileID: 3546905206525303366}
+  deadEffects: []
   onDead:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 205281780015771797}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5597670694416528210}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3548181943156726336
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,7 +2828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
   mainHealth: {fileID: 6700623783686972923}
 --- !u!1 &3548244040876900014
 GameObject:
@@ -3070,7 +3095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
   mainHealth: {fileID: 6700623783686972923}
 --- !u!1 &3548270102170181766
 GameObject:
@@ -3420,7 +3445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
   mainHealth: {fileID: 6700623783686972923}
 --- !u!1 &3548609580873826118
 GameObject:
@@ -3825,7 +3850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
   mainHealth: {fileID: 6700623783686972923}
 --- !u!1 &3548699021855855482
 GameObject:
@@ -4096,7 +4121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555f0ce3c02e47b4eb61e5fb0132bb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 2
   mainHealth: {fileID: 6700623783686972923}
 --- !u!1 &3548728115078047094
 GameObject:

@@ -386,7 +386,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sword1h_Hit_Head_RightDown
-  m_Speed: 1
+  m_Speed: 0.85
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7378413146309728582}
@@ -584,9 +584,9 @@ AnimatorController:
     m_Mask: {fileID: 31900000, guid: 3ef059257be3e2f43b586fd21901d4e1, type: 2}
     m_Motions: []
     m_Behaviours: []
-    m_BlendingMode: 1
+    m_BlendingMode: 0
     m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0.25
+    m_DefaultWeight: 0.75
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
@@ -598,7 +598,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sword1h_Hit_Head_LeftDown
-  m_Speed: 1
+  m_Speed: 0.85
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2113156502803227885}
@@ -787,7 +787,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sword1h_Hit_Torso_Front
-  m_Speed: 1
+  m_Speed: 0.85
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3162772888520050727}
@@ -1025,9 +1025,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.12681164
-  m_TransitionOffset: 0
-  m_ExitTime: 0.110470794
+  m_TransitionDuration: 0.07266475
+  m_TransitionOffset: 0.032488123
+  m_ExitTime: 0.06651239
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

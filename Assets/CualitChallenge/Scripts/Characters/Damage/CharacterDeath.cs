@@ -8,6 +8,7 @@ public class CharacterDeath : MonoBehaviour
 {
     [SerializeField] Rigidbody chestRigidbody;
     [SerializeField] Rigidbody headRigidbody;
+    [SerializeField] GameObject[] deadEffects;
     [SerializeField] UnityEvent onDead;
 
 
@@ -51,8 +52,9 @@ public class CharacterDeath : MonoBehaviour
         GetComponent<Animator>().enabled = false;
         GetComponent<CharacterCombat>().DropWeapon();
         yield return null;
-        headRigidbody.velocity = health.GetLastHitDirection().normalized * Random.Range(1, 20);
-        chestRigidbody.velocity = health.GetLastHitDirection().normalized * Random.Range(1, 20);
+        headRigidbody.velocity = (health.GetLastHitDirection().normalized + Vector3.up *.5f) * Random.Range(2, 15);
+        chestRigidbody.velocity = health.GetLastHitDirection().normalized * Random.Range(2, 15);
+        foreach (GameObject fx in deadEffects) fx.SetActive(true);
         yield return null;
     }
 }
