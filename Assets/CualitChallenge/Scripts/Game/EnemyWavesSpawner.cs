@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,6 +27,11 @@ namespace CualitChallenge.Game
 
         // Update is called once per frame
         void Update()
+        {
+
+        }
+
+        public void StartWave(int currentWave)
         {
 
         }
