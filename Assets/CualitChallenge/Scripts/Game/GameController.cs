@@ -5,6 +5,7 @@ using CualitChallenge.Characters.Player;
 namespace CualitChallenge.Game
 {
 
+    [RequireComponent(typeof(EnemyWavesSpawner))]
     public class GameController : MonoBehaviour
     {
         [SerializeField] GameObject startCamera;
@@ -16,6 +17,14 @@ namespace CualitChallenge.Game
 
         private PlayerMovement playerMovement;
         private PlayerCombat playerCombat;
+        private EnemyWavesSpawner wavesSpawner;
+
+        private int currentWave = 0;
+
+        private void Awake()
+        {
+            wavesSpawner = GetComponent<EnemyWavesSpawner>();
+        }
 
         void Start()
         {
@@ -40,7 +49,6 @@ namespace CualitChallenge.Game
                 return;
             }
 
-
         }
 
         public void StartGame()
@@ -62,6 +70,21 @@ namespace CualitChallenge.Game
         }
 
         public void SetPlayerInputsEnabled(bool inputsEnabled) => playerMovement.enabled = playerCombat.enabled = inputsEnabled;
+
+
+        public void StartWave()
+        {
+            playerCombat.SetInCombatArea(true);
+            wavesSpawner.StartWave(currentWave);
+
+        }
+
+        public void WaveEnded()
+        {
+            currentWave++;
+            playerCombat.SetInCombatArea(false);
+        }
+
     }
 
 }
