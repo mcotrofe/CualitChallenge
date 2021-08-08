@@ -53,7 +53,7 @@ namespace CualitChallenge.Characters
             GetComponent<Animator>().enabled = false;
             GetComponent<CharacterCombat>().DropWeapon();
             yield return null;
-            headRigidbody.velocity = (health.GetLastHitDirection().normalized + Vector3.up * .5f) * Random.Range(2, 15);
+            headRigidbody.velocity = (health.GetLastHitDirection().normalized + Vector3.up * .15f) * Random.Range(2, 15);
             chestRigidbody.velocity = health.GetLastHitDirection().normalized * Random.Range(2, 15);
             PlayFx();
             yield return null;
@@ -61,6 +61,8 @@ namespace CualitChallenge.Characters
 
         public void ResetCharacter()
         {
+            health.Heal();
+            isDead = false;
             foreach (GameObject fx in deadEffects) fx.SetActive(false);
             foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
             {

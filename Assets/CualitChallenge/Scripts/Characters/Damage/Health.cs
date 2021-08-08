@@ -21,5 +21,10 @@ namespace CualitChallenge.Characters.Damage
         public int HP() => hp;
         public int MaxHP() => maxHP;
 
+        public void Heal()
+        {
+            hp = maxHP;
+        }
+
     }
 }

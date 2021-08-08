@@ -28,6 +28,7 @@ namespace CualitChallenge.Characters.Damage
         }
 
         public Vector3 GetLastHitDirection() => lastHitDirecion;
+
     }
 
 }

@@ -1,8 +1,10 @@
 using UnityEngine;
 using CualitChallenge.Characters.AI;
 using CualitChallenge.Characters;
+using CualitChallenge.Characters.Damage;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 namespace CualitChallenge.Game
 {
@@ -12,9 +14,18 @@ namespace CualitChallenge.Game
         [SerializeField] Transform enemyPoolTransform;
         [SerializeField] Transform spawnPointsParent;
 
+        [SerializeField] UnityEvent onWaveStart;
+        [SerializeField] UnityEvent onWaveEnd;
+
+        public UnityEvent OnWaveStart => onWaveStart;
+        public UnityEvent OnWaveEnd => onWaveEnd;
+
         private Stack<GameObject> enemyPool = new Stack<GameObject>();
         private List<GameObject> spawnedEnemies = new List<GameObject>();
         private int livingEnemies = 0;
+
+        private Coroutine currentWaveCoroutine;
+
         
         void Start()
         {
@@ -40,7 +51,8 @@ namespace CualitChallenge.Game
 
         public void StartWave(int currentWave)
         {
-            StartCoroutine(WaveCoroutine(currentWave));
+            if (currentWaveCoroutine != null) StopCoroutine(currentWaveCoroutine);
+            currentWaveCoroutine = StartCoroutine(WaveCoroutine(currentWave));
         }
 
         private void SpawnNext()
@@ -65,7 +77,8 @@ namespace CualitChallenge.Game
 
         private IEnumerator WaveCoroutine(int currentWave)
         {
-            yield return new WaitForSeconds(3);
+            onWaveStart.Invoke();
+            yield return new WaitForSeconds(1);
             int enemyCount = 0;
             int waveCount = 0;
 
@@ -83,8 +96,19 @@ namespace CualitChallenge.Game
                 yield return new WaitForSeconds(Random.Range(2, 3));
             }
             while (livingEnemies > 0) yield return null;
-            print("WAVE ENDED");
-            yield return null;
+            yield return new WaitForSeconds(2);
+
+            onWaveEnd.Invoke();
+        }
+
+        public void CleanUp()
+        {
+            foreach(GameObject enemy in spawnedEnemies)
+            {
+                enemyPool.Push(enemy);
+                enemy.GetComponent<CharacterDeath>().ResetCharacter();
+                enemy.SetActive(false);
+            }
         }
 
     }

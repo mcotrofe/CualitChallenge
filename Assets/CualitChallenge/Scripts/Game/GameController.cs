@@ -20,10 +20,12 @@ namespace CualitChallenge.Game
         private EnemyWavesSpawner wavesSpawner;
 
         private int currentWave = 0;
+        private bool waitingForNextWave = false;
 
         private void Awake()
         {
             wavesSpawner = GetComponent<EnemyWavesSpawner>();
+            wavesSpawner.OnWaveEnd.AddListener(WaveEnded);
         }
 
         void Start()
@@ -45,8 +47,13 @@ namespace CualitChallenge.Game
             if (!isPlaying)
             {
                 if (Input.GetKeyDown(KeyCode.Escape)) SetCursorLocked(!isCursorLocked);
-                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) StartGame();
+                if (Input.GetKeyDown(KeyCode.Space)) StartGame();
                 return;
+            }
+
+            if (waitingForNextWave)
+            {
+                if (Input.GetKeyDown(KeyCode.Space)) StartWave();
             }
 
         }
@@ -74,14 +81,16 @@ namespace CualitChallenge.Game
 
         public void StartWave()
         {
+            waitingForNextWave = false;
             playerCombat.SetInCombatArea(true);
+            wavesSpawner.CleanUp();
             wavesSpawner.StartWave(currentWave);
-
         }
 
         public void WaveEnded()
         {
             currentWave++;
+            waitingForNextWave = true;
             playerCombat.SetInCombatArea(false);
         }
 

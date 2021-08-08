@@ -1212,6 +1212,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353fa0c0573d1e14dbb55d2681a7f55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestRigidbody: {fileID: 2989283909975612249}
+  headRigidbody: {fileID: 2989283909517554907}
+  deadEffects: []
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2988352698080286741
 GameObject:
   m_ObjectHideFlags: 0
