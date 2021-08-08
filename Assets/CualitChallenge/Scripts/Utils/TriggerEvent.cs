@@ -1,21 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TriggerEvent : MonoBehaviour
+namespace CualitChallenge.Utils
 {
-    public string Tag;
-    [SerializeField] UnityEvent onTriggerEnter;
-    [SerializeField] UnityEvent onTriggerExit;
 
-    private void OnTriggerEnter(Collider other)
+    public class TriggerEvent : MonoBehaviour
     {
-        if (other.CompareTag(Tag)) onTriggerEnter.Invoke();
+        public string Tag;
+        [SerializeField] UnityEvent onTriggerEnter;
+        [SerializeField] UnityEvent onTriggerExit;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag(Tag)) onTriggerEnter.Invoke();
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag(Tag)) onTriggerExit.Invoke();
+        }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag(Tag)) onTriggerExit.Invoke();
-    }
 }

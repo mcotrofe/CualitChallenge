@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterPartHealth : Health
+namespace CualitChallenge.Characters.Damage
 {
-
-    [SerializeField] CharacterMainHealth mainHealth;
-
-
-    public override Health MainHealth() => mainHealth;
-
-    public override void ReceiveDamage(int damage, Vector3 direction)
+    public class CharacterPartHealth : Health
     {
-        base.ReceiveDamage(damage, direction);
-        mainHealth.ReceiveDamage(damage, direction);
+
+        [SerializeField] CharacterMainHealth mainHealth;
+
+        public override void ReceiveDamage(int damage, Vector3 direction)
+        {
+            base.ReceiveDamage(damage, direction);
+        }
     }
 }

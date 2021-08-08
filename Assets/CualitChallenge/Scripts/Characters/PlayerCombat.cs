@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using CualitChallenge.Characters;
 
-namespace CualitChallenge.Player
+namespace CualitChallenge.Characters.Player
 {
+
     [RequireComponent(typeof(PlayerMovement))]
     public class PlayerCombat : CharacterCombat
     {

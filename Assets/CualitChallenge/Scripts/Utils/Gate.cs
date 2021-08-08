@@ -1,19 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Gate : MonoBehaviour
+namespace CualitChallenge.Utils
 {
 
-    static readonly string OpenParameter = "Open";
-    private Animator animator;
+    public class Gate : MonoBehaviour
+    {
 
-    void Awake() => animator = GetComponent<Animator>();
+        static readonly string OpenParameter = "Open";
+        private Animator animator;
 
-    public void Open() => animator.SetBool(OpenParameter, true);
+        void Awake() => animator = GetComponent<Animator>();
 
-    public void Close() => animator.SetBool(OpenParameter, false);
+        public void Open() => animator.SetBool(OpenParameter, true);
 
+        public void Close() => animator.SetBool(OpenParameter, false);
 
+    }
 
 }

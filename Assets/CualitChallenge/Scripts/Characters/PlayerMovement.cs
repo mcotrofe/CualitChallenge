@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
-using static UnityEngine.InputSystem.InputAction;
 
-namespace CualitChallenge.Player
+namespace CualitChallenge.Characters.Player
 {
+
     [RequireComponent(typeof(CharacterController), typeof(Animator))]
     public class PlayerMovement : MonoBehaviour
     {

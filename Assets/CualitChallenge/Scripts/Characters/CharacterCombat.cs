@@ -1,30 +1,32 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using CualitChallenge.Characters.Damage;
 
-[RequireComponent(typeof(Animator))]
-public class CharacterCombat : MonoBehaviour
+namespace CualitChallenge.Characters
 {
-    static readonly string AttackTrigger = "Attack";
 
-    [SerializeField] MeleeWeapon weapon;
-
-    protected Animator animator;
-
-    protected virtual void Awake()
+    [RequireComponent(typeof(Animator))]
+    public class CharacterCombat : MonoBehaviour
     {
-        animator = GetComponent<Animator>();
-    }
+        static readonly string AttackTrigger = "Attack";
 
-    public void Attack() => animator.SetTrigger(AttackTrigger);
+        [SerializeField] MeleeWeapon weapon;
 
-    public void OnWeaponSwingStart() => weapon?.StartSwing();
+        protected Animator animator;
 
-    public void OnWeaponSwingEnd() => weapon?.EndSwing();
+        protected virtual void Awake()
+        {
+            animator = GetComponent<Animator>();
+        }
 
-    public void DropWeapon()
-    {
-        if(weapon) weapon.transform.parent = null;
+        public void Attack() => animator.SetTrigger(AttackTrigger);
+
+        public void OnWeaponSwingStart() => weapon?.StartSwing();
+
+        public void OnWeaponSwingEnd() => weapon?.EndSwing();
+
+        public void DropWeapon()
+        {
+            if (weapon) weapon.transform.parent = null;
+        }
     }
 }
