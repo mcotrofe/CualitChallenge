@@ -2303,6 +2303,7 @@ GameObject:
   - component: {fileID: 293358831}
   - component: {fileID: 293358832}
   - component: {fileID: 293358833}
+  - component: {fileID: 293358834}
   m_Layer: 0
   m_Name: GAME
   m_TagString: Untagged
@@ -2343,6 +2344,36 @@ MonoBehaviour:
   startCamera: {fileID: 830371009}
   gameCamera: {fileID: 1513657645}
   player: {fileID: 1864892634}
+  onCombatStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 293358834}
+        m_TargetAssemblyTypeName: BackgroundMusic, Assembly-CSharp
+        m_MethodName: PlayCombatMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCombatEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 293358834}
+        m_TargetAssemblyTypeName: BackgroundMusic, Assembly-CSharp
+        m_MethodName: PlayMenuMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &293358833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2387,6 +2418,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &293358834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293358830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3134a6dd801c444882400fbcad375e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 0.5
+  fadeTime: 3
+  menu: {fileID: 8300000, guid: f1f905ab464339c4fba92c477b088498, type: 3}
+  combat: {fileID: 8300000, guid: 12e389450bf4a524ea5ff7977911cc2b, type: 3}
 --- !u!43 &306435084
 Mesh:
   m_ObjectHideFlags: 0

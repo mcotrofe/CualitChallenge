@@ -1,6 +1,6 @@
 using UnityEngine;
 using CualitChallenge.Characters.Player;
-
+using UnityEngine.Events;
 
 namespace CualitChallenge.Game
 {
@@ -11,6 +11,8 @@ namespace CualitChallenge.Game
         [SerializeField] GameObject startCamera;
         [SerializeField] GameObject gameCamera;
         [SerializeField] GameObject player;
+        [SerializeField] UnityEvent onCombatStart;
+        [SerializeField] UnityEvent onCombatEnd;
 
         private bool isPlaying = false;
         private bool isCursorLocked = false;
@@ -87,6 +89,7 @@ namespace CualitChallenge.Game
             playerCombat.SetInCombatArea(true);
             wavesSpawner.CleanUp();
             wavesSpawner.StartWave(currentWave);
+            onCombatStart.Invoke();
         }
 
         public void WaveEnded()
@@ -94,6 +97,7 @@ namespace CualitChallenge.Game
             currentWave++;
             waitingForNextWave = true;
             playerCombat.SetInCombatArea(false);
+            onCombatEnd.Invoke();
         }
 
     }
