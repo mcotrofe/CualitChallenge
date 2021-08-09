@@ -2327,7 +2327,6 @@ GameObject:
   - component: {fileID: 5597670694416528210}
   - component: {fileID: 205281780015771794}
   - component: {fileID: 205281780015771797}
-  - component: {fileID: 2531545237007733742}
   - component: {fileID: 6463983926780897549}
   - component: {fileID: 6700623783686972923}
   - component: {fileID: 4479001516623281271}
@@ -2427,18 +2426,6 @@ MonoBehaviour:
   runSpeed: 6
   combatSpeed: 3
   attackDelayRandom: {x: 0.5, y: 3}
---- !u!114 &2531545237007733742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3548165784906450746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18a330f972e5b3345b0663b9019c3b20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6463983926780897549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2466,6 +2453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 2
   hitGrazeTime: 0.5
+  invulnerable: 0
   onHit:
     m_PersistentCalls:
       m_Calls: []
@@ -4606,6 +4594,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3542514913117842716}
     m_Modifications:
+    - target: {fileID: 5124401490516644699, guid: f263cb439108d4843a2c7a8ae8fa15b9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5933427136574158685, guid: f263cb439108d4843a2c7a8ae8fa15b9, type: 3}
       propertyPath: m_Name
       value: Katana02

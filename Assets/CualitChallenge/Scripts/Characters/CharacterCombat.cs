@@ -26,12 +26,10 @@ namespace CualitChallenge.Characters
 
         public void DropWeapon()
         {
-            //TODO: if (weapon) weapon.transform.parent = null;
             if (weapon) weapon.gameObject.SetActive(false);
         }
         public void RespawnWeapon()
         {
-            //TODO: revert this if (weapon) weapon.transform.parent = null;
             if (weapon) weapon.gameObject.SetActive(true);
         }
     }

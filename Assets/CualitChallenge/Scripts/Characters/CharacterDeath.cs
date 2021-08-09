@@ -24,10 +24,8 @@ namespace CualitChallenge.Characters
         {
             health = GetComponent<CharacterMainHealth>();
             ResetCharacter();
-
         }
 
-        // Update is called once per frame
         void FixedUpdate()
         {
             if (!isDead && health.HP() <= 0)
