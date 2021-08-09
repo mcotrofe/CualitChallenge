@@ -108,7 +108,7 @@ namespace CualitChallenge.Game
         {
             foreach(GameObject enemy in spawnedEnemies)
             {
-                enemyPool.Push(enemy);
+                if(!enemyPool.Contains(enemy)) enemyPool.Push(enemy);
                 enemy.GetComponent<CharacterDeath>().ResetCharacter();
                 enemy.SetActive(false);
             }

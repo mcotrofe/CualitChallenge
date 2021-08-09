@@ -10,8 +10,6 @@ namespace CualitChallenge.Characters.AI
     public class AIBrain : MonoBehaviour
     {
         static readonly string ForwardParameter = "Forward";
-
-        static readonly string RotateParameter = "Rotate";
         static readonly string RunParameter = "Run";
         static readonly string AimParameter = "Aim";
 
@@ -41,7 +39,6 @@ namespace CualitChallenge.Characters.AI
             attackDelay = UnityEngine.Random.Range(attackDelayRandom.x, attackDelayRandom.y);
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (target == null) return;

@@ -12,6 +12,7 @@ namespace CualitChallenge.Characters.Damage
         public override void ReceiveDamage(int damage, Vector3 direction)
         {
             base.ReceiveDamage(damage, direction);
+            mainHealth.ReceiveDamage(damage, direction);
         }
     }
 }

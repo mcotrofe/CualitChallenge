@@ -356,7 +356,7 @@ MonoBehaviour:
   damage: 1
   hitLayers:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 64
   filterByTag: 0
   hitTag: 
   raycastPoints:
