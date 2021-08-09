@@ -8,6 +8,7 @@ namespace CualitChallenge.Characters.Damage
     public class CharacterMainHealth : Health
     {
         [SerializeField] float hitGrazeTime = .5f;
+        [SerializeField] bool invulnerable = false;
         [SerializeField] UnityEvent onHit;
 
         public UnityEvent OnHit => onHit;
@@ -25,7 +26,7 @@ namespace CualitChallenge.Characters.Damage
 
         public override void ReceiveDamage(int damage, Vector3 direction)
         {
-            base.ReceiveDamage(damage, direction);
+            base.ReceiveDamage(invulnerable? 0 : damage, direction);
             lastHitDirecion = direction;
             animator.SetInteger("HitDirection", (int)Mathf.Sign(transform.InverseTransformDirection(direction.normalized).x));
             if (lastHitTime + hitGrazeTime < Time.time )

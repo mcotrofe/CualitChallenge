@@ -1200,7 +1200,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 20
-  hitGrazeTime: 5
+  hitGrazeTime: 2
+  invulnerable: 1
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2191613502747411895
 MonoBehaviour:
   m_ObjectHideFlags: 0
