@@ -16,7 +16,6 @@ public class BackgroundMusic : MonoBehaviour
     private Coroutine currentFadeCoroutine;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         menuAudioSource = Camera.main.gameObject.AddComponent<AudioSource>();
@@ -24,6 +23,7 @@ public class BackgroundMusic : MonoBehaviour
         combatAudioSource = Camera.main.gameObject.AddComponent<AudioSource>();
         combatAudioSource.clip = combat;
         combatAudioSource.volume = menuAudioSource.volume = volume;
+        combatAudioSource.loop = menuAudioSource.loop = true;
         menuAudioSource.Play();
     }
 
