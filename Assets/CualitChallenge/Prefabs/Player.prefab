@@ -1171,8 +1171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canAim: 1
-  animationParamSmoothing: 15
-  inputSmoothing: 15
+  animationParamSmoothing: 25
+  inputSmoothing: 25
   rotationSmoothing: 10
 --- !u!114 &2989283908710155514
 MonoBehaviour:
@@ -1199,7 +1199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d26c4d095f77c4a9e16db990ea8a0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 20
+  hitGrazeTime: 5
 --- !u!114 &2191613502747411895
 MonoBehaviour:
   m_ObjectHideFlags: 0

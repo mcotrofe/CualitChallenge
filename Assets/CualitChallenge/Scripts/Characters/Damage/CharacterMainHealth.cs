@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CualitChallenge.Characters.Damage
 {
     public class CharacterMainHealth : Health
     {
+        [SerializeField] float hitGrazeTime = .5f;
+        [SerializeField] UnityEvent onHit;
+
+        public UnityEvent OnHit => onHit;
+
         private Animator animator;
-        private float lastHitTime = -1000;
+        private float lastHitTime = 0;
 
         private Vector3 lastHitDirecion;
 
@@ -22,9 +28,14 @@ namespace CualitChallenge.Characters.Damage
             base.ReceiveDamage(damage, direction);
             lastHitDirecion = direction;
             animator.SetInteger("HitDirection", (int)Mathf.Sign(transform.InverseTransformDirection(direction.normalized).x));
-            if (lastHitTime < Time.time + .5f)
+            if (lastHitTime + hitGrazeTime < Time.time )
+            {
+                lastHitTime = Time.time;
                 animator.SetTrigger("Hit");
-            lastHitTime = Time.time;
+                GetComponent<CharacterCombat>().OnWeaponSwingEnd();
+                onHit.Invoke();
+            }
+            
         }
 
         public Vector3 GetLastHitDirection() => lastHitDirecion;

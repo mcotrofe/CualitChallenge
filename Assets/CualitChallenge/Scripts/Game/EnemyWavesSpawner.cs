@@ -25,8 +25,10 @@ namespace CualitChallenge.Game
         private int livingEnemies = 0;
 
         private Coroutine currentWaveCoroutine;
+        private Transform player;
 
-        
+        public void SetPlayerTransform(Transform player) => this.player = player;
+
         void Start()
         {
             InitializeQueue();
@@ -66,6 +68,7 @@ namespace CualitChallenge.Game
 
             newEnemy.SetActive(true);
             newEnemy.GetComponent<AISpawn>().Spawn();
+            newEnemy.GetComponent<AIBrain>().SetTarget(player);
             spawnedEnemies.Add(newEnemy);
             livingEnemies++;
         }
@@ -110,6 +113,8 @@ namespace CualitChallenge.Game
                 enemy.SetActive(false);
             }
         }
+
+        
 
     }
 }

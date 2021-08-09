@@ -2338,7 +2338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3542598466286824152
 Transform:
   m_ObjectHideFlags: 0
@@ -2422,7 +2422,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1666add5556dff4c9ad0b1edd36f84f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  stopRunningDistance: 10
+  attackDistance: 2
+  runSpeed: 6
+  combatSpeed: 3
+  attackDelayRandom: {x: 0.5, y: 3}
 --- !u!114 &2531545237007733742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2461,6 +2465,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 2
+  hitGrazeTime: 0.5
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4479001516623281271
 MonoBehaviour:
   m_ObjectHideFlags: 0

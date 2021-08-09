@@ -490,7 +490,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerAnimatorController
+  m_Name: BotAnimatorController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Forward
@@ -584,9 +584,9 @@ AnimatorController:
     m_Mask: {fileID: 31900000, guid: 3ef059257be3e2f43b586fd21901d4e1, type: 2}
     m_Motions: []
     m_Behaviours: []
-    m_BlendingMode: 0
+    m_BlendingMode: 1
     m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0.75
+    m_DefaultWeight: 1
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}

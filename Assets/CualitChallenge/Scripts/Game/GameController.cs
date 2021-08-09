@@ -36,6 +36,8 @@ namespace CualitChallenge.Game
             playerCombat = player.GetComponent<PlayerCombat>();
             if (playerCombat == null) Debug.LogError("Missing PlayerCombat behaviour attached to player");
 
+            wavesSpawner.SetPlayerTransform(player.transform);
+
             SetPlayerInputsEnabled(false);
             startCamera.SetActive(true);
             gameCamera.SetActive(false);
